@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique(); // Datos Unicos no repetidos.
             $table->timestamp('email_verified_at')->nullable(); //Fechas puede quedar vacio
             $table->string('password');// Passwords
-            $table->string('avatar');
+            //$table->string('avatar'); Se comenta para proseguir con el curso a travez de convenciones
             $table->rememberToken(); // Varchar 100
             $table->timestamps(); // Fehcas | Created_at | Updated_at
         });
