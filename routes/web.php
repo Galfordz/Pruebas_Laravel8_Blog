@@ -17,9 +17,16 @@ use App\Http\Controllers\CursoController;
 
 Route::get('/', HomeController::class);
 
+Route::get('cursos' ,[CursoController::class , 'index'])->name('cursos.index');
+
 //Ruta para crear un formulario de creacion de cursos
-Route::get('cursos/create', [CursoController::class , 'create']);
+Route::get('cursos/create', [CursoController::class , 'create'])->name('cursos.create');
 
-Route::get('cursos' ,[CursoController::class , 'index']);
+//Ruta que se encarga de procesar la informacion desde el formulario de crearcion de cursos.
+Route::post('cursos', [CursoController::class , 'store'])->name('cursos.store');
+    
+Route::get('cursos/{curso}', [CursoController::class , 'show'])->name('cursos.show');
 
-Route::get('cursos/{curso}', [CursoController::class , 'show']);
+Route::get('cursos/{curso}/edit', [CursoController::class , 'edit'])->name('cursos.edit');
+
+Route::put('cursos/{curso}', [CursoController::class , 'update'])->name('cursos.update');
