@@ -17,7 +17,7 @@ use App\Http\Controllers\CursoController;
 
 Route::get('/', HomeController::class);
 
-Route::get('cursos' ,[CursoController::class , 'index'])->name('cursos.index');
+/*Route::get('cursos' ,[CursoController::class , 'index'])->name('cursos.index');
 
 //Ruta para crear un formulario de creacion de cursos
 Route::get('cursos/create', [CursoController::class , 'create'])->name('cursos.create');
@@ -30,3 +30,9 @@ Route::get('cursos/{curso}', [CursoController::class , 'show'])->name('cursos.sh
 Route::get('cursos/{curso}/edit', [CursoController::class , 'edit'])->name('cursos.edit');
 
 Route::put('cursos/{curso}', [CursoController::class , 'update'])->name('cursos.update');
+
+Route::delete('cursos/{curso}', [CursoController::class , 'destroy'])->name('cursos.destroy');
+*/
+
+//se definen las rutas automaticamente haciendo uso de las convenciones del controlador.
+Route::resource('cursos', CursoController::class);
